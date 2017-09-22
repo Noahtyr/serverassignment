@@ -10,13 +10,12 @@ public class chatServer {
     public static void main(String[]args) {
         // ServerSocket being made:
 
-        ServerSocket ss;
+        //ServerSocket ss;
         try {
-            ss = new ServerSocket(8001);
+            ServerSocket ss = new ServerSocket(8080);
             System.out.println("Server is running...");
             while(true) {
                 Socket incoming = ss.accept();
-
                 Runnable r = new chatClient(incoming);
                 Thread t = new Thread(r);
                 t.start();

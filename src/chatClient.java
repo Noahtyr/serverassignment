@@ -28,7 +28,8 @@ public class chatClient implements Runnable {
                  out.println("Welcome!");
 
                  boolean done = false;
-                 while(!done && in.hasNextLine()){
+                 while(true){
+                     if (!(!done && in.hasNextLine())) break;
                      String stream = in.nextLine();
                      if(stream.equals("close")){
                          done= true;
